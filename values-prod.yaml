@@ -1,6 +1,5 @@
 global:
   namespace: "app-prod"
-
 # Database Configuration
 postgresql:
   enabled: true
@@ -19,7 +18,7 @@ backend:
   port: 8080
   image:
     repository: "image-registry.openshift-image-registry.svc:5000/app-prod/backend-api"
-    tag: "latest"
+    tag: "9f58e7ce09fd193dece76536c32b1cbf4c071a12"
   git:
     uri: "https://github.com/sksinghsujit/3tier-app-backend-service.git" # Replace with your git repo
     ref: "main"
@@ -29,7 +28,6 @@ backend:
     DB_PORT: "5432"
     DB_NAME: "appdb"
     DB_USER: "appuser"
-
 # Frontend Web App Configuration
 frontend:
   name: frontend-web
@@ -47,14 +45,13 @@ frontend:
     host: "app-prod.apps.c1.ucmc.org" # Replace with your cluster domain
     tls:
       termination: edge
-
 frontend:
   name: frontend-web
   replicas: 2
   port: 8080
   image:
     repository: "image-registry.openshift-image-registry.svc:5000/app-prod/frontend-web"
-    tag: "latest"
+    tag: "eacba3477ea80862ad66e2b6cafcb69fb3d344b9"
   git:
     uri: "https://github.com/sksinghsujit/3tier-app-frontend-service.git" # Replace with your git repo
     ref: "main"
