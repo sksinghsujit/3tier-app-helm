@@ -47,3 +47,20 @@ frontend:
     host: "app-prod.apps.c1.ucmc.org" # Replace with your cluster domain
     tls:
       termination: edge
+
+frontend:
+  name: frontend-web
+  replicas: 2
+  port: 8080
+  image:
+    repository: "image-registry.openshift-image-registry.svc:5000/app-prod/frontend-web"
+    tag: "latest"
+  git:
+    uri: "https://github.com/sksinghsujit/3tier-app-frontend-service.git" # Replace with your git repo
+    ref: "main"
+    contextDir: "/"
+  route:
+    enabled: true
+    host: "app-prod.apps.c1.ucmc.org" # Replace with your cluster domain
+    tls:
+      termination: edge
