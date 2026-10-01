@@ -20,7 +20,8 @@ spec:
       containers:
         - name: frontend
           # Pulls the image directly from the OpenShift internal ImageStream built by BuildConfig
-          image: image-registry.openshift-image-registry.svc:5000/{{ .Values.global.namespace }}/{{ .Values.frontend.name }}:latest
+          # image: image-registry.openshift-image-registry.svc:5000/{{ .Values.global.namespace }}/{{ .Values.frontend.name }}:latest
+          image: "{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag }}"
           imagePullPolicy: Always
           ports:
             - containerPort: {{ .Values.frontend.port }}

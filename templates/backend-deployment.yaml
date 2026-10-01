@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: image-registry.openshift-image-registry.svc:5000/{{ .Values.global.namespace }}/{{ .Values.backend.name }}:latest
+          image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}"
           ports:
             - containerPort: {{ .Values.backend.port }}
           env:

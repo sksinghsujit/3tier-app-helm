@@ -18,6 +18,9 @@ backend:
   name: backend-api
   replicas: 2
   port: 8080
+  image:
+    repository: "image-registry.openshift-image-registry.svc:5000/app-dev/backend-api"
+    tag: "latest"
   git:
     uri: "https://github.com/sksinghsujit/3tier-app-backend-service.git" # Replace with your git repo
     ref: "main"
@@ -33,6 +36,9 @@ frontend:
   name: frontend-web
   replicas: 2
   port: 8080
+  image:
+    repository: "image-registry.openshift-image-registry.svc:5000/app-dev/frontend-api"
+    tag: "latest"
   git:
     uri: "https://github.com/sksinghsujit/3tier-app-frontend-service.git" # Replace with your git repo
     ref: "main"
