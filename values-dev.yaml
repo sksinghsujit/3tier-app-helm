@@ -1,6 +1,5 @@
 global:
   namespace: "app-dev"
-
 # Database Configuration
 postgresql:
   enabled: true
@@ -12,7 +11,6 @@ postgresql:
   storageSize: 5Gi
   port: 5432
   storageClassName: ocs-storagecluster-ceph-rbd
-
 # Backend API Configuration
 backend:
   name: backend-api
@@ -20,7 +18,7 @@ backend:
   port: 8080
   image:
     repository: "image-registry.openshift-image-registry.svc:5000/app-dev/backend-api"
-    tag: "latest"
+    tag: "9f58e7ce09fd193dece76536c32b1cbf4c071a12"
   git:
     uri: "https://github.com/sksinghsujit/3tier-app-backend-service.git" # Replace with your git repo
     ref: "main"
@@ -30,7 +28,6 @@ backend:
     DB_PORT: "5432"
     DB_NAME: "appdb"
     DB_USER: "appuser"
-
 # Frontend Web App Configuration
 frontend:
   name: frontend-web
