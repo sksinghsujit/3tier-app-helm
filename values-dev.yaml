@@ -18,7 +18,7 @@ backend:
   port: 8080
   image:
     repository: "image-registry.openshift-image-registry.svc:5000/app-dev/backend-api"
-    tag: "9f58e7ce09fd193dece76536c32b1cbf4c071a12"
+    tag: "8ab71a6b231a964ada1d2e83672e771441f99f5a"
   git:
     uri: "https://github.com/sksinghsujit/3tier-app-backend-service.git" # Replace with your git repo
     ref: "main"
@@ -35,7 +35,7 @@ frontend:
   port: 8080
   image:
     repository: "image-registry.openshift-image-registry.svc:5000/app-dev/frontend-web"
-    tag: "eacba3477ea80862ad66e2b6cafcb69fb3d344b9"
+    tag: "595730297fd0341bede5880a33e292dba1e1339a"
   git:
     uri: "https://github.com/sksinghsujit/3tier-app-frontend-service.git" # Replace with your git repo
     ref: "main"
